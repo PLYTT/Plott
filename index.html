@@ -1,8 +1,71 @@
-<p> </p>
-<header></header>
-<div id="video-container"><iframe id="video-frame" src="https://www.youtube.com/embed/gSPv-oW5QWA?autoplay=1" width="300" height="150" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
-<div id="channel-description">
-<h1>About Us</h1>
-<p>This is the official website of fxck.bzrp, this site will be updated with the latest news about my TikTok account and my telegram page, if my TikTok account gets banned, I will create a new one and will put the link to it on here, but for now, feel free to join my <a href="https://iplis.ru/2MviT3">telegram group.</a></p>
-</div>
-<footer>© 2023 Fxck bzrp. All rights reserved.</footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Of Shame</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        #navbar {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        #ip-address {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <div id="ip-address">Loading IP address...</div>
+
+    <!-- YouTube Video Embed -->
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div id="navbar">
+        <button class="button" onclick="alert('Yes button clicked!')">Yes</button>
+        <button class="button" onclick="alert('No button clicked!')">No</button>
+    </div>
+
+    <script>
+        // Fetch IP Address
+        async function fetchIP() {
+            try {
+                const response = await fetch('https://api64.ipify.org?format=json');
+                const data = await response.json();
+                document.getElementById('ip-address').innerText = `Your IP Address: ${data.ip}`;
+            } catch (error) {
+                document.getElementById('ip-address').innerText = 'Could not load IP address.';
+            }
+        }
+        fetchIP();
+    </script>
+</body>
+</html>
